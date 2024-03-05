@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:14-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+      - ~/apps/server.crt:/var/lib/postgresql/server.crt
+      - ~/apps/server.key:/var/lib/postgresql/server.key
+    environment:
+      - ssl = on
+      - ssl_cert_file=/var/lib/postgresql/server.crt
+      - ssl_key_file=/var/lib/postgresql/server.key
+      - POSTGRES_PASSWORD=S3cret2024
+      - POSTGRES_USER=terraform_user
+      - POSTGRES_DB=terraform_backend

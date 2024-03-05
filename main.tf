@@ -1,7 +1,7 @@
 locals {
   instance_types = {
     dev  = "t2.micro"
-    uat  = "t2.small"
+    uat  = "t2.micro"
     prod = "t2.micro"
   }
 }
