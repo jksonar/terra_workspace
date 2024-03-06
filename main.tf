@@ -1,8 +1,13 @@
+# create new variables for postgresql connection
+# export PGPASSWORD=S3cret2024
+# export PGUSER=terraform_user
+
 locals {
   instance_types = {
-    dev  = "t2.micro"
-    uat  = "t2.micro"
-    prod = "t2.micro"
+    default = "t2.micro"
+    dev     = "t2.micro"
+    uat     = "t2.micro"
+    prod    = "t2.micro"
   }
 }
 
